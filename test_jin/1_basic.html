@@ -21,5 +21,66 @@
   <label for="multi">여러 줄 입력:</label>
 </p>
 <textarea name="줄줄" id="multi" cols="30" rows="10"></textarea>
+
+<hr>
+
+<h1>The progress element</h1>
+
+<label for="file">Downloading progress</label>
+<progress id="file" value="32" max="100"></progress>
+
+<hr>
+
+<h1>The source element</h1>
+<p>Click on the play button to play a sound:</p>
+
+<audio src="horse.ogg" type="audio/ogg"></audio>
+Your browser does not support the audio element.
+<audio src="horse.mp3" type="audio/mpeg">
+</audio>
+<hr>
+<h1>The svg element</h1>
+
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="yellow" stroke-width="4" fill="green"  />
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+<hr>
+
+<h1>The output element</h1>
+
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+<input type="range" id="a" value="50">
++<input type="number" id="b" value="25">
+=<output name="x" for="a b"></output>
+</form>
+
+<p><strong>Note:</strong> The output element is not supported in Edge 12 (or earlier).</p>
+
+<hr>
+
+<h1>The map and area elements</h1>
+
+<p>Click on the computer, the phone, or the cup of coffee to go to a new page and read more about the topic:</p>
+
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+</map>
+
+<br>
+
+<h1>The script element</h1>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+</script> 
+
 </body>
 </html>
