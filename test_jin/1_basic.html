@@ -8,6 +8,12 @@
     * {
       color: purple;
     }
+    .designed-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .designed-scroll::-webkit-scrollbar-thumb {
+      background-color: #666666;
+    }
   </style>
 </head>
 <body>
@@ -96,6 +102,18 @@ document.getElementById("demo").innerHTML = "Hello JavaScript!";
   <div>당근</div>
   <p>토마토</p>
   <span>오렌지</span>
+</div>
+
+<hr>
+
+<div class="box overflow-auto designed-scroll">
+  content!
+  content!
+  content!
+  content!
+  content!
+  content!
+  content!
 </div>
 
 </body>
