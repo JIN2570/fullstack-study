@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        span {
+            width: 120px;
+            height: 30px;
+            background-color: royalblue;
+            color: white;
+
+            /* 가로/세로 길이 지정을 위해 보여짐 특성을 바꿔보기 */
+            display: block;
+            /* 많은 경우에 인라인 요소를 블록 또는 인라인-블록으로 바꾸는 행위를 하게 될 것임(예 : a태그) */
+
+            /* 요소의 숨김 처리 */
+            display: none;
+            /* 화면에서 요소를 일시적으로 혹은 영구적으로 사라지게 하는 목적으로 자주 사용(예 : 모달창) */
+        }
+
+        /* Tip! 모달창 */
+        #modal {
+            width: 300px;
+            height: 200px;
+            background-color: aqua;
+            border-radius: 6px;
+        }
+    </style>
+    <script>
+        function showmodal() {
+            document.getElementById("modal").style.display = "block"
+        }
+        function hidemodal() {
+            document.getElementById("modal").style.display = "none"
+        }
+
+    </script>
+</head>
+<body>
+    <!-- display : 요소의 화면 출력(보여짐) 특성 -->
+    <!-- 각 요소에 이미 지정되어 있고 수정도 가능: block, inline, inline-block 등 -->
+
+    <span>Hello World!</span>
+
+    <hr>
+
+    <!-- Tip! 탭 메뉴, 모달창 등 요소를 숨기거나 보일 때 -->
+    <div id="modal"></div>
+    <button type="button" onclick="showmodal()">열기</button>
+    <button type="button" onclick="hidemodal()">닫기</button>
+</body>
+</html>
