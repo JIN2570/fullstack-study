@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+  <link rel="stylesheet" href="/08_layout/css/css.css">
+
+</head>
+<body>
+  <!-- 헤더 영역 -->
+  <header>
+    <!-- 가운데 정렬을 위한 div -->
+    <div class="top">
+      <h1 class="logo">
+        <a href="#">
+          <img src="https://ssl.pstatic.net/static/nid/join/m_logo_naver.png" alt="네이버 로고">
+        </a>
+      </h1>
+    </div>
+  </header>
+
+  <!-- 메인 영역 -->
+  <main id="container">
+    <!-- 가운데 정렬을 위한 div -->
+    <div class="section-input">
+      <label for="id">아이디</label>
+      <br><br>
+      <div class="input-group-row">
+        <input type="text" id="id">
+        <span class="sp-naver">@naver.com</span>
+      </div>
+      <div>
+        <br>
+        <label for="password">비밀번호</label><br><br>
+      </div>
+      <input type="password" id=password>
+      <div>
+        <br>
+        <label for="ps">비밀번호 재확인</label>
+        <br><br>
+      </div>
+      <input type="password" id="ps">
+      <div>
+        <br><br><br>
+        <label for="name">이름</label>
+        <br><br>
+      </div>
+      <input type="text" id="name">
+      <div>
+        <br>
+        <label for="birthday">생년월일</label>
+        <br><br>
+      </div>
+      <input type="text" id="birthday" placeholder="년(4자)">
+      <select class="box" id="box">
+        <option value="type">월</option>
+        <option value="1">1월</option>
+        <option value="2">2월</option>
+        <option value="3">3월</option>
+        <option value="4">4월</option>
+        <option value="5">5월</option>
+        <option value="6">6월</option>
+        <option value="7">7월</option>
+        <option value="8">8월</option>
+        <option value="9">9월</option>
+        <option value="10">10월</option>
+        <option value="11">11월</option>
+        <option value="12">12월</option>
+      </select>
+      <input type="text" id="birthday" placeholder="일">
+      <div>
+        <br>
+        <label for="gender">성별</label>
+        <br><br>
+        <select class="gender" id="gender">
+          <option value="type">성별</option>
+          <option value="남자">남자</option>
+          <option value="여자">여자</option>
+        </select>
+      </div>
+      <div>
+        <br>
+        <label for="email">본인 확인 이메일(선택)</label>
+        <br><br>
+      </div>
+      <input type="text" id="email" placeholder="선택입력">
+      <div>
+        <br>
+        <label for="phone">휴대전화</label>
+        <br><br>
+      </div>
+      <select class="phone1" id="phone1">
+        <option value="type">대한민국 +82</option>
+        <option value="SKT">SKT</option>
+        <option value="LG">LG</option>
+        <option value="KT">KT</option>
+      </select>
+      <br><br>
+      <input type="text" id="phone" class="phone" placeholder="전화번호 입력">
+      <button class="btn">인증번호 받기</button>
+      <br><br>
+      <input type="text" id="phone" value="인증번호를 입력하세요" disabled>
+      <br><br>
+      <button type="button" class="btn-a">가입하기</button>
+    </div>
+  </main>
+
+  <!-- 푸터 영역 -->
+  <footer>
+    <!-- 가운데 정렬을 위한 div -->
+    <div class="bottom">
+      <div class="bt-menu">
+       <span class="text">이용약관</span>
+       <span class="text">개인정보처리방침</span>
+       <span class="text">책임의 한계와 법적고지</span>
+       <span class="text">회원정보</span>
+       <span class="text">고객센터</span>
+      </div>
+      <div class="copyright">
+        <span class="copy">Copyright</span>
+        <span class="copy">© NAVER Corp.</span>
+        <span class="copy">All Rights Reserved.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
