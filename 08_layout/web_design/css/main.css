@@ -9,6 +9,7 @@
 a {
   text-decoration: none;
 }
+
 ul {
   list-style: none;
 }
@@ -42,6 +43,7 @@ header {
   color: #fff;
   text-shadow: 0 -1px 0 #222;
 }
+
 /* 내비게이션 영역 */
 nav {
   width: 900px;
@@ -58,19 +60,17 @@ nav {
   /* 서브 메뉴를 absolute로 만들기 위해 부모 요소를 relative로 지정 */
   position: relative;
 }
-#topMenu > li > a{
+#topMenu > li > a {
   display: block;
   padding: 19px 60px;
   color: #fff;
   font-weight: 600;
   text-shadow: 0 1px #07c;
 }
-
 #topMenu > li > a:hover {
   color: #000;
   text-shadow: 0 -1px #07c;
 }
-
 #topMenu > li > a > span {
   /* 화살표 사이즈 조절(10px이 최소값, 더 이상 안내려감) */
   font-size: 0.5em;
@@ -87,17 +87,14 @@ nav {
 #topMenu > li:hover > ul {
   display: block;
 }
-
 #topMenu > li > ul > li {
   padding: 10px 10px 10px 30px;
 }
-
 #topMenu > li > ul > li > a {
   font-size: 14px;
   padding: 10px;
   color: #000;
 }
-
 #topMenu > li > ul > li > a:hover {
   color: #f00;
 }
@@ -106,10 +103,39 @@ nav {
 #slideShow {
   width: 100%;
   height: 300px;
-  background-color: orange;
+  /* background-color: orange; */
+  overflow: hidden;
+}
+#slides {
+  display: flex;
+  position: relative;
+}
+#slides > button {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  border: none;
+  padding: 20px;
+  background-color: transparent;
+  color: #000;
+  font-weight: 800;
+  font-size: 24px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+#prev {
+  left: 0;
+}
+#next {
+  right: 0;
+}
+#slides > button:hover {
+  background-color: #222;
+  color: #fff;
+  opacity: 0.6;
 }
 
-/* 컨텐츠 영역 */
+/* 콘텐츠 영역 */
 #contents {
   width: 100%;
   height: 300px;
@@ -121,19 +147,139 @@ nav {
   width: 600px;
   height: 100%;
   padding-top: 20px;
-  background-color: blueviolet;
+  /* background-color: violet; */
+}
+
+#tabMenu input[type="radio"] {
+  display: none;
+}
+
+#tabMenu label {
+  display: inline-block;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #aaa;
+  border: 1px solid transparent; /* 테두리 영역 확보 */
+  cursor: pointer;
+}
+
+#tabMenu label:hover {
+  color: #222;
+}
+
+#tabMenu input:checked + label { /* 활성화된 탭의 라벨 선택 */
+  color: #b00;
+  background-color: #eee;
+}
+
+#tabMenu .tabContent { /* 탭 내용 공통 스타일 */
+  padding-top: 10px;
+  border: 1px solid #ddd;
+  display: none;
+}
+#notice ul {
+  margin-left: 30px;
+}
+#notice ul li {
+  line-height: 2.5;
+  cursor: pointer;
+}
+
+#gallery ul {
+  margin-left: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 6px;
+}
+/* 탭 메뉴와 탭 내용 연결하기 */
+#tab1:checked ~ #notice,
+#tab2:checked ~ #gallery {
+  display: block;
 }
 
 /* 퀵 링크 영역 */
 #links {
   width: 600px;
   height: 100%;
-  background-color: skyblue;
+  /* background-color: skyblue; */
+}
+
+#links ul {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#links ul li {
+  width: 33%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+#links ul li a span {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+} 
+#quick-icon1 {background-image: url(../images/icon-1.jpg);}
+#quick-icon2 {background-image: url(../images/icon-2.jpg);}
+#quick-icon3 {background-image: url(../images/icon-3.jpg);}
+
+#links ul lu a p {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #666;
 }
 
 /* 푸터 영역 */
 footer {
   width: 100%;
   height: 100px;
-  background-color: gray;
+  /* background-color: gray; */
+  border-top: 2px solid #222;
+}
+
+#bottomMenu {
+  position: relative;
+}
+
+#bottomMenu ul {
+  display: flex;
+  margin-top: 15px;
+}
+
+#bottomMenu > ul > li {
+  padding: 5px 20px;
+  border-right: 1px solid #ddd;
+}
+#bottomMenu > ul > li:last-child {
+  border-right: none;
+}
+
+#bottomMenu > ul > li a {
+  font-size: 15px;
+  color: #666; 
+}
+#sns {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#sns > ul > li {
+  padding: 5px;
+}
+
+#company {
+  margin-top: 25px;
+  margin-left: 20px;
+}
+
+#company p {
+  font-size: 14px;
+  color: #aaa;
 }

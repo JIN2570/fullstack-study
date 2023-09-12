@@ -9,6 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dream Jeju</title>
   <link rel="stylesheet" href="./css/main.css">
+  <script defer src="./js/main.js"></script>
 </head>
 <body>
   <div id="container">
@@ -42,14 +43,101 @@
       </nav>
     </header>
 
-    <section id="slideShow"></section>
+    <div id="slides">
+      <img src="./images/photo-1.jpg" alt="slide1">
+      <img src="./images/photo-2.jpg" alt="slide2">
+      <img src="./images/photo-3.jpg" alt="slide3">
+      <button type="button" id="prev">&lang;</button>
+      <button type="button" id="next">&rang;</button>
+      <section id="slideShow">
 
+      </div>
+    </section>
     <section id="contents">
-      <div id="tabMenu"></div>
-      <div id="links"></div>
+      <div id="tabMenu">
+        <!-- 탭 메뉴 작성하기(w/라디오 버튼)
+        탭 메뉴는 JS로 만드는 것이 일반적
+        여기서는 CSS만으로 간단히 구현
+        탭 버튼과 마찬가지로 라디오 버튼은 각각 1개만 선택하는 특성이 있는데 이것을 응용
+       -->
+       <input type="radio" name="tabs" id="tab1" checked>
+       <label for="tab1">공지사항</label>
+       <input type="radio" name="tabs" id="tab2">
+       <label for="tab2">갤러리</label>
+
+       <div id="notice" class="tabContent">
+        <!-- 공지사항 내용 -->
+        <ul>
+          <li>사무실을 이전했습니다.</li>
+          <li>[참가 모집] 카약 체험을 초대합니다.</li>
+          <li>[참가 모집] 여름 방학 기간, 오름 체험단을 모집합니다.</li>
+          <li>겨울, 추천 여행지</li>
+          <li>가을, 추천 여행지</li>
+        </ul>
+       </div>
+       <div id="gallery" class="tabContent">
+        <!-- 갤러리 내용 -->
+        <ul>
+          <li><img src="./images/img-1.jpg" alt="img1"></li>
+          <li><img src="./images/img-2.jpg" alt="img2"></li>
+          <li><img src="./images/img-3.jpg" alt="img3"></li>
+          <li><img src="./images/img-1.jpg" alt="img1"></li>
+          <li><img src="./images/img-2.jpg" alt="img2"></li>
+          <li><img src="./images/img-3.jpg" alt="img3"></li>
+        </ul>
+       </div>
+      </div>
+      <div id="links">
+        <ul>
+          <li>
+            <a href="#">
+              <span id="quick-icon1"></span>
+              <p>평화기행</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span id="quick-icon2"></span>
+              <p>힐링 워크샵</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span id="quick-icon3"></span>
+              <p>문의하기</p>
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <footer></footer>
+    <footer>
+      <div id="bottomMenu">
+        <ul>
+          <li><a href="#">회사 소개</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">여행약관</a></li>
+          <li><a href="#">사이트맵</a></li>
+        </ul>
+        <div id="sns">
+          <ul>
+            <li>
+              <a href="#"><img src="./images/sns-1.png" alt="sns1"></a>
+            </li>
+            <li>
+              <a href="#"><img src="./images/sns-2.png" alt="sns2"></a>
+            </li>
+            <li>
+              <a href="#"><img src="./images/sns-3.png" alt="sns3"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="company">
+        <p>제주특별자치도 ***동 ***로 *** (대표전화) 123-456-7890</p>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
