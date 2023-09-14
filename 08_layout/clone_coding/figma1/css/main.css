@@ -10,3 +10,21 @@ img {
   display: block;
   max-width: 100%;
 }
+.logo {
+  display: block;
+  width: 38px;
+
+}
+#header {
+  padding: 24px 48px;
+  background-color: #fff;
+  display: flex;
+  width: 100%;
+}
+#header .main-menu {
+  display: flex;
+}
+
+.navbar {
+  display: flex;
+}
