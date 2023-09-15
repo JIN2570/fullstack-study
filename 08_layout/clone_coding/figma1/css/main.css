@@ -20,6 +20,8 @@ img {
   background-color: #fff;
   display: flex;
   width: 100%;
+  justify-content: space-between;
+
 }
 #header .main-menu {
   display: flex;
@@ -27,4 +29,47 @@ img {
 
 .navbar {
   display: flex;
+}
+.btn {
+  height: 48px;
+  border-radius: 10px;
+  padding: 14px 24px 16px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  background: rgb(85, 81, 255);
+  cursor: pointer;
+  user-select: none;
+  transition: transform .2s;
+}
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+#header .main-menu li {
+    background: transparent;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#header .sub-menu li {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#header .main-menu {
+position: relative;
+}
+
+#header .main-menu ul {
+  /* display: none; */
+  position: absolute;
+    margin-bottom: 16px;
+    border: 3px solid #333;
+    padding: 8px 0;
+    background-color: #fff;
+    z-index: 21;
+    top: 36px;
 }
