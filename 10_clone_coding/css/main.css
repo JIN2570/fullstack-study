@@ -10,15 +10,8 @@ body {
 a {
   text-decoration: none;
 }
-
-.inner {
-  max-width: 1100px; 
-  margin: 0 auto;
-  position: relative; 
-}
-
-.btn-search:hover {
-  color: red;
+img {
+  display: block;
 }
 .btn-spon {
   display: block;
@@ -34,4 +27,8 @@ a {
     top: 0px;
     right: 0px;
     z-index: 110;
+    cursor: pointer;
+}
+.btn-spon:hover {
+  background-color: crimson;
 }
