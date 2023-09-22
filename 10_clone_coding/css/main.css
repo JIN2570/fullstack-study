@@ -1,0 +1,37 @@
+body {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #333;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.inner {
+  max-width: 1100px; 
+  margin: 0 auto;
+  position: relative; 
+}
+
+.btn-search:hover {
+  color: red;
+}
+.btn-spon {
+  display: block;
+    width: 190px;
+    height: 76px;
+    text-align: center;
+    line-height: 76px;
+    background: #ef4223;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 110;
+}
