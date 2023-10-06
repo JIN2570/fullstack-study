@@ -26,6 +26,12 @@
     
     const money = Number(prompt('돈을 넣어주세요.', '0'));
     let change = 0;
+    if (money <= 1300) {
+      alert('허니버터 1300원')
+    } else {
+      location.reload;
+      alert('돈이 모자랍니다.')
+    }
   </script>
 </head>
 <body>
