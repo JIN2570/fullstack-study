@@ -20,38 +20,38 @@
     
     
     // 풀이2-1
-    let date = new Date(2023, 9, 8); // 'sun'
+    let date = new Date(2023, 9, 8); // 'SUN'
     document.write('요일: ' + date.getDay(), '<br>');
+
     let days;
     switch (date.getDay()) {
       case 0:
         days = 'SUN';
         break;
-        case 1:
+      case 1:
         days = 'MON';
         break;
-        case 2:
+      case 2:
         days = 'TUE';
         break;
-        case 3:
+      case 3:
         days = 'WED';
         break;
-        case 4:
+      case 4:
         days = 'THU';
         break;
-        case 5:
+      case 5:
         days = 'FRI';
         break;
-        case 6:
+      case 6:
         days = 'SAT';
         break;
     }
-    document.write(days);
+    document.write(days, '<br>');
 
-    // 풀이 2-2
+    // 풀이2-2
     let daysList = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
     document.write(daysList[date.getDay()]);
-
   </script>
 </head>
 <body>

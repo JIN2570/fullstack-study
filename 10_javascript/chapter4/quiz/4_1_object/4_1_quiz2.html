@@ -18,19 +18,19 @@
 
     // 풀이2
     const person = {
-      name: 'Jin',
-      age: 28,
+      name: '재현',
+      age: 30,
       gender: '남자',
-      hobby: ['music'],
-      eat: function () {
-        document.write('마라탕','치킨','초밥');
+      hobby: ['배드민턴', '스노우보드', '싸이클'],
+      speak: function () {
+        document.write(this.name + '이가 말을 합니다. 아아~');
       }
     };
-    document.write('name ' + person.name, '<br>');
-    document.write('age ' + person.age, '<br>');
-    document.write('gender ' + person.gender, '<br>');
-    document.write('hobby' + person['hobby'], '<br>');
-    person.eat();
+    document.write(person.name, '<br>');
+    document.write(person.age, '<br>');
+    document.write(person['gender'], '<br>');
+    document.write(person['hobby'], '<br>');
+    person.speak();
   </script>
 </head>
 <body>
