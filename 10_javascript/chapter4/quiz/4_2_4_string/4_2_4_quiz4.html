@@ -16,21 +16,19 @@
 
     const str = prompt('숫자를 입력하세요.');
     const result = [];
-    
+
     // 풀이4
     // for (let i = 0; i < str.length; i++) {
     //   if (str[i] % 2 === 0) {
+    //     result.push('-');
     //   }
-    //   result.push('-')
-    //   result.push('str[1]')
-    //   console.logg(result);
-    
+    //   result.push(str[i]);
     // }
 
-    fot (result of str) {
+    for (const s of str) {
       if (s % 2 === 0) {
         result.push('-');
-      }  
+      }
       result.push(s);
     }
     console.log(result);
