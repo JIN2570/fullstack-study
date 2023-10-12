@@ -5,14 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script>
-    const a = 'Lee-Jin-Heang';
-    const b = a.split('').reverse('').join('');
+    const money = Number(prompt('돈을 넣어주세요.', '0'));
+    let change = 0; // 거스름돈
 
-    console.log(a);
-    console.log(a.split(''));
-    console.log(a.split('').reverse(''));
-    console.log(a.split('').reverse('').join(''));
-    console.log(b);
+    if (money <= 0 || isNaN(money)) {
+      alert('돈을 다시 넣어주세요.');
+      location.reload();
+    } else {
+      const snack = prompt('어떤 과자를 뽑으실건가요?(허니버터, 칸쵸, 프링글스)');
+
+      switch (snack) {
+        case '허니버터':
+          change = money - 1300;
+          break;
+          case '칸쵸':
+          change = money - 1500;
+          break;
+          case '프링글스':
+          change = money - 3000;
+          break;
+        default:
+          alert('해당 과자가 없습니다.');
+          location.reload();
+          break;
+      }
+      if (change < 0) {
+        alert('돈이 모자랍니다.');
+      }
+      document.write(`${snack} 나왔습니다<br>거스름돈은 ${change}원 입니다.`);
+    }
+
+    const arr = ['one', 'two', 'three'];
+
+    const [one, two, three] = arr;
+    console.log(one);
+    console.log(two);
+    console.log(three);
+
+    const user = {
+      nickname: 'Jin',
+      years: 28
+    };
+    const { nickname, years:ages, isAdmin = false } = user;
+    console.log(user);
+
+    const salaries = [
+      {
+        name: 'John',
+        salary: 100
+      },
+      {
+        name: 'Pete',
+        salary: 300
+      },
+      {
+        name: 'Marry',
+        salary: 250
+      }
+    ];
+
+
+    function topSalary(salaryList) {
+      let max = 0;
+      let maxName = null;
+      
+      for (const { name, salary } of salaryList) {
+        if (max < salary) {
+          max = salary;
+          maxName = name;
+        }
+      }
+      return maxName;
+    }
+
+    console.log(topSalary(salaries));
   </script>
 </head>
 <body>
