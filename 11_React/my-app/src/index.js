@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -10,6 +10,17 @@ import PropsUse from './chapter5/5.3/PropsUse';
 import Comment from './chapter5/Comment';
 import CommentList from './chapter5/CommentList';
 import CommentEx from './chapter5/5.6/CommentEx';
+import NotificationList from './chapter6/NotificationList';
+import Counter from './chapter7/7.2/Counter';
+import SetStateMerge from './chapter7/7.2/SetStateMerge';
+import Toggle from './chapter8/8.1/Toggle';
+import MyButton from './chapter8/8.1/8.2/MyButton';
+import ConfirmButton from './chapter8/ConfirmButton';
+import Greeting from './chapter9/9.1/Greeting';
+import LoginControl from './chapter9/9.1/9.2/LoginControl';
+import LoginControlRefactoring from './chapter9/9.3/LoginControlRefactoring';
+import Mailbox from './chapter9/9.3/Mailbox';
+import MainPage from './chapter9/9.4/MainPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -22,6 +33,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //   );
 // }, 1000);
 
+// 9장 예제
+// const messages = ['React', 'Re: React', 'Re:Re: React'];
+const messages = [];
+
+
 root.render(
     // <App />
 
@@ -32,15 +48,32 @@ root.render(
     // <PropsUse />
     // <Comment />
     // <CommentList />
-    <CommentEx
-    author={{
-        name: 'JIN',
-        avatarUrl: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" 
-    }} 
-    text='첫 방문합니다. 또올게요' 
-    date = '203-10-18' />
+    // <CommentEx
+    // author={{
+    //     name: 'JIN',
+    //     avatarUrl: "https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png" 
+    // }} 
+    // text='첫 방문합니다. 또올게요' 
+    // date = '203-10-18' />
 
+// 6장 예제
+// {/* <NotificationList /> */}
+
+// 7장 예제
+// {/* <Counter /> */}
+// {/* <SetStateMerge /> */}
+
+// 8장 예제
+// {/* <Toggle /> */}
+// {/* <MyButton /> */}
+// {/* <ConfirmButton /> */}
+// 9장 예제
+// {/* <Greeting isLoggedIn = {false} /> */}
+// {/* <LoginControlRefactoring /> */}
+// {/* <Mailbox unreadMessages={messages}/> */}
+<MainPage />
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
