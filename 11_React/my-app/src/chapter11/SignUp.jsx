@@ -4,28 +4,61 @@ import { useState } from "react";
 
 // 사용자의 정보를 입력받는 가입 양식 컴포넌트 만들기
 function SignUp() {
-  const [name, setName] = useState('');
-  const [gender, setGender] = useState('남자');
+  const [inputs, setInputs] = useState({
+    name:'',
+    gender:'남자'
+  });
+  const { name, gender } = inputs;
+  
 
-  const handleChangeName = (e) => {
-    setName(e.target.value);
-  };
+  // const [name, setName] = useState('');
+  // const [gender, setGender] = useState('남자');
 
-  const handleChangeGender = (e) => {
-    setGender(e.target.value);
+  // 객체 형태로 관리
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    console.log(name, value);
+
+
+    
+    // const handleChangeName = (e) => {
+      //   setName(e.target.value);
+      // };
+      
+      // const handleChangeGender = (e) => {
+        //   setGender(e.target.value);
+        // };
+    // 방법1
+    // const copyObj = {
+    //   ...inputs
+    // };
+    // copyObj[name] = value;
+    // setInputs(copyObj);
+    // 방법2
+    // setInputs({
+    //   ...inputs,
+    //   [name]: value
+    // });
+    setInputs((inputs) => ({
+      ...inputs,
+      [name]: value
+    }));
   };
+      
   const handleSubmit = (e) => {
     alert(`이름: ${name} 성별: ${gender}`);
     e.preventDefault();
   }
 
+  
   return (
     <form onSubmit={handleSubmit}>
       <label>
         이름:
         <input
         type="text"
-        onChange={handleChangeName}
+        name="name"
+        onChange={handleInputChange}
         value={name}
         />
       </label>
@@ -34,7 +67,7 @@ function SignUp() {
 
       <label>
         성별:
-        <select value={gender} onChange={handleChangeGender}>
+        <select name='gender' value={gender} onChange={handleInputChange}>
           <option value="남자">남자</option>
           <option value="여자">여자</option>
 
@@ -45,7 +78,7 @@ function SignUp() {
 
 
   );
-}
+};
 export default SignUp;
 // 1. 이름 입력받기
 // 이름을 입력할 수 있는 input 태그와 입력된 값을 저장하기 위한 name이라는 state를 정의(초기값 '')

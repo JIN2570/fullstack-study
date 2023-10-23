@@ -33,6 +33,7 @@ import FileInput from './chapter11/11.3/FileInput';
 import Reservation from './chapter11/11.4/Reservation';
 import TestLogin from './chapter11/SignUp';
 import SignUp from './chapter11/SignUp';
+import ReservationRefactoring from './chapter11/11.4/ReservationRefactoring';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -95,6 +96,7 @@ root.render(
 // {/* <FlavorForm /> */}
 // {/* <FileInput /> */}
 // {/* <Reservation /> */}
+// {/* <ReservationRefactoring /> */}
 <SignUp />
 );
 
