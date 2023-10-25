@@ -13,6 +13,8 @@ import CommentEx from './chapter5/5.6/CommentEx';
 import NotificationList from './chapter6/NotificationList';
 import Counter from './chapter7/7.2/Counter';
 import SetStateMerge from './chapter7/7.2/SetStateMerge';
+import ConponentVariable from './chapter7/7.2/7.6/ConponentVariable';
+
 import Toggle from './chapter8/8.1/Toggle';
 import MyButton from './chapter8/8.1/8.2/MyButton';
 import ConfirmButton from './chapter8/ConfirmButton';
@@ -46,6 +48,7 @@ import ProfileCard from './chapter13/ProfileCard';
 import StyledPage from './chapter15/StyledPage';
 import Blocks from './chapter15/theme/Blocks';
 import ThemeApp from './chapter15/theme/ThemeApp';
+import SimpleRouter from './chapter16/SimpleRouter';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -88,6 +91,7 @@ root.render(
 // {/* <Counter /> */}
 // {/* <SetStateMerge /> */}
 // {/* <TextInputWithFocusButton /> */}
+// {/* <ConponentVariable /> */}
 
 // 8장 예제
 // {/* <Toggle /> */}
@@ -122,7 +126,9 @@ root.render(
 // 15장 예제
 // {/* <StyledPage /> */}
 // {/* <Blocks /> */}
-<ThemeApp />
+// {/* <ThemeApp /> */}
+// 16장 예제
+<SimpleRouter />
 );
 
 
