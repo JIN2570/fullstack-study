@@ -44,8 +44,12 @@ function NewsList(props) {
     const fetchNewsData = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('https://newsapi.org/v2/top-headlines?country=kr&category=science&apiKey=3b7c54b561be4bd2a970d93b69a457c1'
-        )
+        // const response = await axios.get('https://newsapi.org/v2/top-headlines?country=kr&category=science&apiKey=3b7c54b561be4bd2a970d93b69a457c1'
+        // // API 호출 시 카테고리 지정하기
+        // // 카테고리가 all일때는 아무것도 들어가면 안되고, 그 외엔 `&category=해당 카테고리 값` 넣기
+        // )
+        const query = category === 'all' ? '' : `&category=${category}`;
+        const response = await axios.get(`https://newsapi.org/v2/top-headlines?country=kr${query}&category=science&apiKey=3b7c54b561be4bd2a970d93b69a457c1`)
         console.log(response);
         setArticles(response.data.articles);
       } catch (err) {
@@ -54,7 +58,7 @@ function NewsList(props) {
       setLoading(false);
     };
     fetchNewsData();
-  }, []);
+  },[category]);
 
   // 로딩 중일 때
   // 추천: react-spinners 또는 Lottie File 사용 (라이브러리)
