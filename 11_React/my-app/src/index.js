@@ -54,6 +54,7 @@ import EffectSummary from './chapter7/7.2/7.3/ex1/ex2/EffectSummary';
 import EffectContainer from './chapter7/7.2/7.3/ex1/ex2/EffectContainer';
 import Timer from './chapter7/7.2/7.3/ex3/Timer';
 import TimerContainer from './chapter7/7.2/7.3/ex3/TimerContainer';
+import ApiRequest from './chapter17/ApiRequest';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -100,7 +101,7 @@ root.render(
 // {/* <CounterEffect /> */}
 // {/* <EffectSummary /> */}
 // {/* <EffectContainer /> */}
-<TimerContainer />
+// {/* <TimerContainer /> */}
 
 // 8장 예제
 // {/* <Toggle /> */}
@@ -138,8 +139,9 @@ root.render(
 // {/* <ThemeApp /> */}
 // 16장 예제
 // {/* <SimpleRouter /> */}
+// 17장 예제
+<ApiRequest />
 );
-
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
