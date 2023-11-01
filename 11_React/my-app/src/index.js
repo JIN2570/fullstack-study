@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from "react-redux";
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -55,6 +57,8 @@ import EffectContainer from './chapter7/7.2/7.3/ex1/ex2/EffectContainer';
 import Timer from './chapter7/7.2/7.3/ex3/Timer';
 import TimerContainer from './chapter7/7.2/7.3/ex3/TimerContainer';
 import ApiRequest from './chapter17/ApiRequest';
+import { store } from './chapter18/app/Store';
+import ReduxTestApp from './chapter18/ReduxTestApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -140,7 +144,15 @@ root.render(
 // 16장 예제
 // {/* <SimpleRouter /> */}
 // 17장 예제
-<ApiRequest />
+// {/* <ApiRequest /> */}
+
+// 18장 예제
+// 2. 리액트에 Redux Store 제공하기
+// ReduwTestApp 컴포넌트와 그 하위 자식들은 Redux Store에 접근 가능
+// Redux Store에 저장된 ㄴㅅㅁㅅㄷ
+<Provider store={store}>
+<ReduxTestApp />
+</Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
