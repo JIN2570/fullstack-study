@@ -3,10 +3,13 @@ import axios from "axios";
 // 리액트(JS)에서 이미지 파일 가져오기
 import yonexImg from "../images/yonex.jpg";
 import styled from 'styled-components';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Button, Nav } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllProducts, selectProductList } from '../features/product/productSlice';
+import { addMoreProducts, getAllProducts, getMoreProductsAsync, selectProductList, selectStatus } from '../features/product/productSlice';
 import ProductListItem from '../components/ProductListItem';
+import { getMoreProducts } from '../api/productAPI';
+import { RingLoader } from "react-spinners";
+import TabContenets from '../components/TabContenets';
 
 const MainBackground = styled.div`
   height: 500px;
@@ -16,11 +19,17 @@ const MainBackground = styled.div`
   background-position: center;
 `;
 
+const Colors = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 
 function Main(props) {
 
   const dispath = useDispatch();
   const productList = useSelector(selectProductList);
+  const status = useSelector(selectStatus); // API 요청 상태(로딩 상태로 쓸 수 있음)
 
   // 처음 마운트 됐을 때 서버에 상품 목록 데이터를 요청하고
   // 그 결과를 리덕스 스토어에 전역 상태로 저장
@@ -34,6 +43,14 @@ function Main(props) {
     .catch((err) => { console.error(err) });
   }, []);
 
+  const handleGetMoreProducts = async () => {
+    const result = await getMoreProducts();
+    dispath(addMoreProducts(result));
+  };
+  const handleGetMoreProductsAsync = () => {
+    dispath(getMoreProductsAsync());
+  };
+
   return (
     <>
     {/* 메인 이미지 섹션 */}
@@ -44,7 +61,7 @@ function Main(props) {
 
       {/* 상품 목록 레이아웃 섹션 */}
       <section>
-      <Container>
+      <Container className='pt-3'>
       <Row>
         {/* 부트스트랩을 이용한 반응형 작업 */}
         {/* md≥768px 이상에서 전체 12등분 중 4:4:4로 보여줌 */}
@@ -76,8 +93,45 @@ function Main(props) {
               key = {itemlist.id} itemlist = {itemlist}
               /> 
             })}
+
+            {/* 로딩 만들기 */}
+            
+            {status === 'loading' &&  
+            <Colors>
+              <RingLoader
+                color="#36d7b7"
+                size={100}
+              />
+            </Colors> 
+            }
       </Row>
+
+    {/* 탭의 내용을 다 만들어 놓고 조건부 렌더링 하면 됨 */}
+    {/* 방법1: 삼항 연산자 사용(가독성 나쁨) */}
+    {/* {showTabIndex === 0
+    ? <div>탭 내용1</div>
+      : showTabIndex === 1
+      ? <div>탭 내용2</div>
+        : showTabIndex === 2
+        ? <div>탭 내용3</div>
+        : showTabIndex === 3
+          ? <div>탭 내용4</div>
+          : null} */}
     </Container>
+
+    {/* 상품 더 보기 기능 만들기
+      더보기 버튼 클릭 시 axios를 사용하여 데이터 요청
+      받아온 결과를 전역 상태에 추가하기 위해 slice에 리듀서 추가 및 action 생성함수 export
+      스토어에 dispatch로 요청 보내기
+    */}
+    {/* HTTP 요청 코드를 함수로 만들어서 api 폴더로 추출 */}
+    <Button variant='secondary' className='mb-4' onClick={handleGetMoreProducts}>
+      더보기
+    </Button>
+    {/* thunk를 이용한 비동기 작업 처리 */}
+    <Button variant='secondary' className='mb-4' onClick={handleGetMoreProductsAsync}>
+      더보기 {status}
+    </Button>
       </section>
       </>
   );

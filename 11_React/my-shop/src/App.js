@@ -4,8 +4,9 @@ import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./page/Layout";
 import Main from "./page/Main";
-
-
+import ProductDetail from "./page/ProductDetail";
+import 'react-toastify/dist/ReactToastify.css'; // React-Toastify CSS추가
+import { ToastContainer } from "react-toastify";
 const GlobalStyle = createGlobalStyle`
   /* 글로벌(공통) 스타일 */
   body {
@@ -56,11 +57,23 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Main />} />
+          {/* 상품별 상세페이지 여러 개를 라우팅하려면? URL 파라미터 사용
+            예: /detail/1 로 접속하면 productId에 1이 담기도록 설정
+          */}
+          <Route path="detail/:productId" element={<ProductDetail />} />
         </Route>
         {/* index: index route(여기서는 default child route) */}
 
         {/* <Route path="cart" element={undefined} /> */}
       </Routes>
+
+      {/* 토스트 하나로 재사용 */}
+      <ToastContainer 
+        position="bottom-right"
+        autoClose={3000}
+        pauseOnFocusLoss={false}
+        theme="dark"
+      />
     </>
   );
 }
