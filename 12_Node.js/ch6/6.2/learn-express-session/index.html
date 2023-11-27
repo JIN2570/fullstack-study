@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>익스프레스 서버</title>
+</head>
+<body>
+  <h1>익스프레스</h1>
+  <p>배워봅시다.</p>
+
+  <div>
+    <form id="form" action="/user" method="post">
+      <label for="username">사용자</label>
+      <input type="text" id="username" name="username">
+      <button type="submit">등록</button>
+    </form>
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    document.querySelector('#form').addEventListener('submit', async (e) => {
+      e.preventDefault(); // submit 이벤트 기본 동작: 폼 데이터를 서버로 전송하고 새로 고침
+      const username = e.target.username.value;
+      try {
+        const result = await axios.post('/user', { username });
+        console.log(result);
+      } catch (err) {
+        console.error(err);
+      }
+      e.target.username.value = '';
+    });
+  </script>
+</body>
+</html>
