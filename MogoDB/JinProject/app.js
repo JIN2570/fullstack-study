@@ -22,7 +22,7 @@ async function run() {
   // const deleteUser = await users.deleteMany({age:{$gt:20}});
   // console.log('dddd', deleteUser);
 
-  const userData = await users.find({name: 'JIN'}).project({name: 1,_id:0}).toArray();
+  const userData = await users.find({name: 'JIN'}).project({name:1, _id:0}).toArray();
   console.log('userdata', userData);
 };
 run();
