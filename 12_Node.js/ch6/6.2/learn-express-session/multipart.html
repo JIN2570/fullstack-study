@@ -1,0 +1,48 @@
+<!-- 1. form 태그로 보내는 경우(동기식) -->
+<form id="form" action="/upload" method="post" enctype="multipart/form-data">
+  <!-- 1) 파일 하나 -->
+  <!-- <input type="file" name="image"> -->
+  <!-- 2) 여러 파일 -->
+  <input type="file" name="image" multiple>
+  <!-- 3) 여러 파일(input 태그를 여러 개 사용해서 name 다른경우) -->
+  <!-- <input type="file" name="image1">
+  <input type="file" name="image2"> -->
+
+  <input type="text" name="title">
+  <button type="submit">업로드</button>
+</form>
+
+<!-- 2. 자바스크립트 Ajax로 보내는 경우(비동기식) -->
+<!-- Quiz: Ajax 방식은 각자 해볼것! -->
+<script src="http://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+
+document.querySelector('#form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  // console.log(e.target.image);
+  // console.log(e.target.image.files[0]);
+  // console.log(e.target.title);
+  const image = e.target.image.files[0];
+
+  // console.log(image);
+  const formData = new FormData(); // mutipart/form-data 타입으로 보냄
+  // 1) 파일 하나
+  // formData.append('image', image); // 서버에서 받을 때 req. file
+  // formData.append('image', image1); // 서버에서 받을 때 req.body.title
+  // 2) 여러 파일
+  // formData.append('image',image)
+  // formData.append('image',image1)
+  // 하드코딩 지양, for 반복문 사용
+  const fileList = e.target.image.files;
+  for (const file of fileList) {
+    formData.append('image', file)
+  }
+  try {
+      const result = await axios.post('/upload',formData);
+      console.log(result.FormData);
+    } catch (err) {
+      console.error(err);
+    }
+  });
+  
+</script>
