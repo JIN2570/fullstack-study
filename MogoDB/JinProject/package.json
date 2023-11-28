@@ -1,11 +1,12 @@
 {
   "dependencies": {
+    "mogodb": "^0.0.1-security",
+    "mogoose": "^0.0.1-security",
     "mongodb": "^6.3.0"
   },
   "name": "jinproject",
   "version": "1.0.0",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
