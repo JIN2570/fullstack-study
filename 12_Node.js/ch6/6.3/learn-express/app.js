@@ -50,6 +50,28 @@ app.use(session({
 app.use('/', indexRouter); // '/'로 요청이 들어오면 indexRouter로 
 app.use('/user', userRouter); // '/user'로 요청이 들어오면 userRouter로 
 
+// Quiz2:
+// 1) 아래 라우터(API)들을 분리해보기(다른 파일로 추출)
+const shopRouter = require('./routes/shop');
+const boardRouter = require('./routes/board-sub');
+app.use('/shop', shopRouter); // '/shop' 으로 요청이 들어오면 shopRouter 로
+app.use('/board', boardRouter); // '/board' 으로 요청이 들어오면 shopRouter 로
+
+// 2) 라우트 매개변수 적용해보기
+// app.get('/shop/shirts', (req, res) => {
+//   res.send('셔츠 판매 페이지');
+// });
+
+// app.get('/shop/pants', (req, res) => {
+//   res.send('바지 판매 페이지');
+// });
+
+// app.get('/board/sub/notice', (req, res) => {
+//   res.send('공지사항 게시판');
+// });
+// app.get('/board/sub/qna', (req, res) => {
+//   res.send('문의 게시판');
+// });
 
 // app.post('/', (req, res) => {
 //   // res.send('hi')
