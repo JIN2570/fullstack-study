@@ -21,4 +21,4 @@ const commentSchema = new Schema({
 });
 
 // 몽구스는 자동으로 복수형으로 변경하고 소문자로 변환한 후 이를 데이터베이스 컬렉션 이름으로 사용
-module.exports = mongoose.model('Commenet', commentSchema); // 'Comment'는 comments 컬렉션으로 변환됨
+module.exports = mongoose.model('Comment', commentSchema); // 'Comment'는 comments 컬렉션으로 변환됨
