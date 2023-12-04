@@ -16,9 +16,10 @@ router.get('/', (req, res) => {
 
 router.get('/insert', async (req, res) => {
   try {
-    await db.collection('post').insertOne({ 
-      title: '제발 들어가라'
     // JS Object 형태로 저장
+    await db.collection('post').insertOne({ 
+      title: '제발 들어가라',
+      content: '들어갔니?'
     });
     res.send('데이터 저장 완료');
   } catch (err) {

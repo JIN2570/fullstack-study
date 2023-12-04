@@ -1,10 +1,9 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
+const passport = require('passport');
 
 const { client } = require('../database');
-const { ObjectId } = require('mongodb');
-const passport = require('passport');
-const db = client.db('board');
+const db = client.db('board'); // board 데이터베이스에 연결
 
 const router = express.Router();
 
@@ -55,7 +54,7 @@ router.post('/register', async (req, res) => {
     // 숫자가 커질수록 비밀번호를 알아내기가 어려워지지만 암호화 시간도 오래 걸림
     const hash = await bcrypt.hash(password, 12); // 최소 10 이상 추천, 31까지 사용 가능
 
-        await db.collection('user').insertOne({
+    await db.collection('user').insertOne({
       username,
       password: hash
     });

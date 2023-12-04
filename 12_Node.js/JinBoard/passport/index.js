@@ -1,10 +1,8 @@
 const passport = require('passport');
-const local = require('./localStrategy'); // 로컬 로그인 전략()
-const express = require('express');
+const local = require('./localStrategy'); // 로컬 로그인 전략(=로그인 시 어떻게 처리할지 동작)
 const { ObjectId } = require('mongodb');
 
 const { client } = require('../database');
-const user = require('../../ch8/8.6/learn-mongooes/schemas/user');
 const db = client.db('board'); // board 데이터베이스에 연결
 
 // passport를 이해하는 핵심 부분 작성

@@ -1,4 +1,3 @@
-// 기본적인 서버 구조 작성하기
 const dev = require('dotenv');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
@@ -6,7 +5,8 @@ const session = require('express-session');
 const express = require('express');
 const path = require('path');
 const passport = require('passport');
-const passportConfig = require('./passport');
+
+// 기본적인 서버 구조 작성하기
 // 1) dotenv 설정
 dev.config();
 // 라우터 가져오기
@@ -15,7 +15,9 @@ const postRouter = require('./routes/post');
 const userRouter = require('./routes/user')
 // DB 연결 함수 가져오기
 const { connect } = require('./database');
+
 // ./passport/index.js 가져오기
+const passportConfig = require('./passport');
 
 // 2) app 관련 설정들(전역속성) 설정
 const app = express();
