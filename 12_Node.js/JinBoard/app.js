@@ -52,6 +52,10 @@ app.use(passport.session()); // req.session 객체에 passport 정보를 저장
 // res.locals.user 속성에 req.user 정보 넣기 미들웨어로 등록
 // => 템플릿 엔진에서 user 객체를 통해 로그인한 사용자 정보에 접근할 수 있음
 app.use((req, res, next) => {
+  console.log('111111111111');
+  console.log(req.session);
+  console.log(req.user);
+  console.log('111111111111');
   res.locals.user = req.user;
   next();
 });
@@ -78,4 +82,20 @@ app.use((err, req, res, next) => {
 // 6) 서버 연결
 app.listen(app.get('port'), () => {
   console.log(app.get('port') + '번에서 익스프레스 서버 실행');
-})
+});
+
+// 이미 업로드 기능 만들기
+// 이미지 첨부를 위한 file input 이용하여 서버로 이미지를 전송하면 서버 컴퓨터 하드에 저장
+// => 서버 컴퓨터의 용량에 문제가 생기거나 서버를 배포하는 곳에 따라 하드 사용이 어려울 수 있음
+// => 그래서 보통 AWS S3 같은 파일 저장용 클라우드 서비스를 이용
+// 클라우드 서비스: AWS, GCP, MS Azure, 네이버 클라우드 등
+// 참고로 AWS 첫 가입시 카드 등록까지 마치면 1년 동안 프리 티어(사용량이 무제한은 아님)
+
+// 1) 글 작성 페이지에 file input 하나 만듦
+// 2) 서버는 전송된 이미지를 S3에 업로드
+// npm install multer multer-s3 @aws-sdk/client-s3
+// multer: 전송된 파일을 다룰 수 있음, multerpart/form-data를 파싱 해줌
+// multer-s3: 파일을 S3에 업로드 할 수 있도록 도와줌
+// @aws-sdk/client-s3: Node.js 환경에서 AWS S3를 쓸 때 필요
+// 3) 업로드 완료 시 URL이 하나 생성되는데 DB에 글과 함께 저장
+// 4) 나중에 이미지 필요할 때 DB에 저장한 URL 꺼내쓰기

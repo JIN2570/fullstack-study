@@ -2,16 +2,16 @@
   <div>
     <a href="/" class="logo">JinBoard</a>
     <a href="/post">List</a>
-    <a href="/post/Write">Write</a>
+    <a href="/post/write">Write</a>
   </div>
 
   <div>
     <% if (user) { %>
       <%= user.username %>님😍
-      <a href="">Logout</a>
-    <%} else { %>
+      <a href="/user/logout">Logout</a>
+    <% } else { %>
       <a href="/user/login">Login</a>
       <a href="/user/register">Join</a>
-      <% } %>
+    <% } %>
   </div>
 </nav>

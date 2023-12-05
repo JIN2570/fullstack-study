@@ -5,19 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JinBoard</title>
 
-
   <!-- /css/main.css 로 GET 요청을 보내는 것임 -->
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
-  <nav>
-    <a href="/" class="logo">JinBoard</a>
-    <a href="/post">List</a>
-    <a href="/post/Write">Write</a>
-  </nav>
+  <%- include('nav') %>
 
   <main>
-    <h3> 📝 JinBoard 서비스 오픈</h3>
+    <h3>📝 JinBoard 서비스 오픈</h3>
     <p>일상을 기록하세요.</p>
   </main>
 </body>
