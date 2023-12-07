@@ -26,6 +26,17 @@ router.get('/insert', async (req, res) => {
     console.error(err);
   }
 });
+// DB에 데이터 전체 삭제하기 테스트
+router.get('/delete-all', async (req, res) => {
+await db.collection('post').deleteMany({});
+res.send('데이터 전체 삭제완료');
+});
+
+// GET /cors
+router.get('/cors', (req, res) => {
+  // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000')
+  res.send('데이터 응답 테스트');
+});
 
 // Quiz: /time으로 접속하면 현재 서버의 날짜/시간을 보여주는 기능 만들기
 router.get('/time', (req, res) => {

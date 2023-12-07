@@ -11,9 +11,11 @@ module.exports = () => {
   // req.login() 으로 로그인 시 실행되며, 세션 객체(req.session)에 어떤 데이터를 저장할지 정함
   // 즉, 세션 만들기가 자동 실행되고 쿠키도 알아서 보내줌
   passport.serializeUser((user, done) => {
+    console.log('serializeUser'); // 로그인 중인 사용자 정보
     console.log(user); // 로그인 중인 사용자 정보
+
     done(null, user._id); // _id만 저장
-    // passport.deserializeUser(null, {id: user._id, username: username});
+    // done(null, {id: user._id, username: username});
   });
 
   // 첫번째 인자값: 에러 발생 시 에러 값
@@ -27,9 +29,11 @@ module.exports = () => {
   // 조회한 정보를 req.user에 저장하므로 앞으로 req.user를 통해 로그인한 사용자의 정보를 가져올 수 있음
   // 세션 쿠키를 까서 세션 ID로 세션 객체를 찾아서 그 안에 데이터를 첫번째 매개변수로 전달
   passport.deserializeUser(async (id, done) => {
+    console.log('deserializeUser');
     console.log(id); // 세션에 저장한 내용
     try {
-      const user = await db.collection('user').findOne({ id: new ObjectId(id) });
+      const user = await db.collection('user').findOne({ _id: new ObjectId(id) });
+      console.log(user);
       done(null, user); // req.user에 저장
       // 이제 아무데서나 req.user를 쓰면 현재 로그인한 사용자의 정보를 쓸 수 있음
     } catch (err) {

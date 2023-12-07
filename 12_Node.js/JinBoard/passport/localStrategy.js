@@ -18,6 +18,11 @@ module.exports = () => {
     try {
       // 사용자가 입력한 아이디(username), 비번(password)을 검사하는 코드를 적는 곳
       const existUser = await db.collection('user').findOne({ username });
+
+      console.log('LocalStrategy');
+      console.log(existUser);
+
+
       if (!existUser) { // 일치하는 아이디가 없으면
         return done(null, false, { message: '가입되지 않은 회원입니다.' }); // 회원 인증 실패 시 두번째 인자값에 false
       }
