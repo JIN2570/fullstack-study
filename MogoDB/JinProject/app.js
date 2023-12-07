@@ -24,6 +24,6 @@ async function run() {
 
   const userData = await users.find({name: 'JIN'}).project({name:1, _id:0}).toArray();
   console.log('userdata', userData);
-};
+};  
 run();
  
