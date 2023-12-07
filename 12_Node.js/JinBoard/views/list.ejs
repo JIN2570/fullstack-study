@@ -45,16 +45,23 @@
       <div class="list-box">
         <h4>
           <!-- 글 제목 누르면 상세 페이지로 이동하도록 링크 걸기 -->
-          <a href="/post/<%= posts[i]._id %>">
+          <a href="/post/detail/<%= posts[i]._id %>">
             <%= posts[i].title %>
           </a>
 
-          <!-- 글 수정 버튼 -->
-          <a href="/post/edit/<%= posts[i]._id %>">✏️</a>
+          <!-- 본인이 쓴 글에만 수정, 삭제 버튼 보여주기 -->
+          <% if (posts[i].username === user?.username) { %>
+            
+            <!-- 글 수정 버튼 -->
+            <a href="/post/edit/<%= posts[i]._id %>">✏️</a>
+            
+            <!-- 글 삭제 버튼 -->
+            <!-- data-: 사용자 정의 속성, HTML에 데이터 저장 시 주로 사용 -->
+            <span class="delete cursor-pointer" data-id="<%= posts[i]._id %>">🗑️</span>
+            <% } %>
+          
 
-          <!-- 글 삭제 버튼 -->
-          <!-- data-: 사용자 정의 속성, HTML에 데이터 저장 시 주로 사용 -->
-          <span class="delete cursor-pointer" data-id="<%= posts[i]._id %>">🗑️</span>
+              
         </h4>
         <p><%= posts[i].content %></p>
       </div>
