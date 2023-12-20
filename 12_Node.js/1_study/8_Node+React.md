@@ -21,4 +21,4 @@ https://dori-coding.tistory.com/entry/React-Node-Express-%EC%84%9C%EB%B2%84%EC%9
 
 1. Proxy 설정: https://create-react-app.dev/docs/proxying-api-requests-in-development/
 2. 서버에서 응답 헤더 설정(Access-Control-Allow-Origin: '*')
-=> cors 라이브러리 사용
+=> cors 라이브러리 사용 
